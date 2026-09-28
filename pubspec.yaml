@@ -1,0 +1,50 @@
+name: nutri_app
+description: App de nutrición que funciona de verdad.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter 
+  # Base de datos local
+  sqflite: ^2.3.0
+  path: ^1.8.0
+  path_provider: ^2.1.0
+  
+  # Firebase
+  firebase_core: ^4.0.0
+  firebase_auth: ^6.0.0
+  
+  # Red y APIs
+  http: ^1.1.0
+  dio: ^5.4.0
+  dotenv: ^4.1.0
+  
+  # Estado (Riverpod para escalabilidad)
+  flutter_riverpod: ^2.4.0
+  
+  # Utilidades
+  intl: ^0.19.0
+  uuid: ^4.2.0
+  firebase_ai: ^4.0.0
+  flutter_dotenv: ^6.0.1
+  sqflite_common_ffi: ^2.4.3
+  sqflite_common_ffi_web: 1.1.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env     
+
+
+  
+
+
+    
+      
