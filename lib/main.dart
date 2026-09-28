@@ -1,7 +1,4 @@
-import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
-import 'package:sqflite_common_ffi_web/sqflite_common_ffi_web.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -42,17 +39,7 @@ final foodSearchServiceProvider = Provider<FoodSearchService>((ref) {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Future<void> main() async {
-    WidgetsFlutterBinding.ensureInitialized();
-
-    // Inicializar base de datos según la plataforma
-    if (kIsWeb) {
-      databaseFactory = databaseFactoryFfiWeb;
-    } else if (Platform.isLinux || Platform.isWindows) {
-      sqfliteFfiInit();
-      databaseFactory = databaseFactoryFfi;
-    }
-
+  
     await dotenv.load();
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
