@@ -1,5 +1,4 @@
-
-import 'package:flutter/material.dart';
+mport 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -14,6 +13,10 @@ import 'screens/home_screen.dart';
 
 final databaseServiceProvider = Provider<DatabaseService>((ref) {
   return DatabaseService.instance;
+});
+
+final authServiceProvider = Provider<AuthService>((ref) {
+  return AuthService();
 });
 
 final usdaServiceProvider = Provider<UsdaService>((ref) {
@@ -39,14 +42,6 @@ final foodSearchServiceProvider = Provider<FoodSearchService>((ref) {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
-    await dotenv.load();
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-    runApp(const ProviderScope(child: NutriApp()));
-  }
-
   await dotenv.load();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
