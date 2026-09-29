@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../services/auth_service.dart';
 import 'home_screen.dart';
+import '../main.dart';
 
 class AuthScreen extends ConsumerStatefulWidget {
   const AuthScreen({super.key});
@@ -25,11 +25,13 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
     try {
       final auth = ref.read(authServiceProvider);
       if (isLogin) {
-        await auth.signIn(_emailController.text.trim(), _passwordController.text);
+        await auth.signIn(
+            _emailController.text.trim(), _passwordController.text);
       } else {
-        await auth.signUp(_emailController.text.trim(), _passwordController.text);
+        await auth.signUp(
+            _emailController.text.trim(), _passwordController.text);
       }
-      
+
       if (mounted) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (_) => const HomeScreen()),

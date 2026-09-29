@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/intl.dart';
 import '../main.dart';
-import '../services/auth_service.dart';
 import '../models/food_entry.dart';
 import 'auth_screen.dart';
 import 'add_food_screen.dart';

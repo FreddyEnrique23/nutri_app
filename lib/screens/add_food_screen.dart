@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uuid/uuid.dart';
 import '../main.dart';
-import '../services/auth_service.dart';
 import '../models/food_entry.dart';
 
 class AddFoodScreen extends ConsumerStatefulWidget {
